@@ -35,7 +35,7 @@ env:
 
 jobs:
   owrt_core:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout Projects
         uses: actions/checkout@main
@@ -118,7 +118,7 @@ jobs:
           echo "======================="
 
       - name: Release Firmware
-        uses: softprops/action-gh-release@master
+        uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{env.OWRT_TARGET}}_${{env.OWRT_SOURCE}}_${{env.OWRT_DATE}}
           files: ./owrt/upload/*.*

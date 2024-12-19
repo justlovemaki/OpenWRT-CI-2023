@@ -10,7 +10,7 @@ permissions: write-all
 
 jobs:
   owrt_test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: find
         run: |
@@ -18,7 +18,7 @@ jobs:
           sudo find / -maxdepth 4 -type d -iregex "$list" >> /tmp/all.txt
 
       - name: Release Firmware
-        uses: softprops/action-gh-release@master
+        uses: softprops/action-gh-release@v2
         with:
           tag_name: 测试专用
           files: /tmp/*.txt
