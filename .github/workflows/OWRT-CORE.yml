@@ -86,7 +86,7 @@ jobs:
           ./scripts/feeds update -a
           ./scripts/feeds install -a
           rm -rf feeds/packages/lang/golang
-          git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
+          git clone https://github.com/kenzok8/golang -b 1.23 feeds/packages/lang/golang
           ls -l
           sed -i "s/openwrt-\$(UU_ARCH)\/\$(PKG_VERSION)\/uu.tar.gz?/openwrt-\$(UU_ARCH)\/\$(PKG_VERSION)\//g" feeds/packages/net/uugamebooster/Makefile
           sed -i "s/\$(PKG_NAME)-\$(UU_ARCH)-\$(PKG_VERSION).tar.gz/uu.tar.gz/g" feeds/packages/net/uugamebooster/Makefile
